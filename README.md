@@ -22,7 +22,8 @@ musps/action-deployer-php@master
 
 * Set your ssh private key in your repository secrets.
 * Set the file and command as argument .
-
+* Current Deployer PHP version: `6.4.6`
+ 
 ### Demo workflows
 
 * Run the deployment on branch prefixed by `releases/x`.
@@ -49,3 +50,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 ```
+
+### About
+
+* This project is based on top of https://github.com/deployphp/deployer
