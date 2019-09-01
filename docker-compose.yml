@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  deployer-php:
+    container_name: deployer-php
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      ACTION_DEBUG: 'true'
+      GITHUB_WORKSPACE: /github/workspace
+    volumes:
+      - /my_local_path:/github/workspace
+      - /my_local_path/id_rsa:/data_dev/id_rsa
+    command: deploy prod
