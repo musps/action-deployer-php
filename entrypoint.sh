@@ -2,6 +2,11 @@
 
 set -e
 
+if [[ -n "$REF" && -n "$SUBSTRING" ]]; then
+  REF=${REF/$SUBSTRING/}
+  echo "REF: $REF"
+fi
+
 if [[ -n "$ACTION_DEBUG" ]]; then
   echo "DEBUG ENABLED"
   cd $GITHUB_WORKSPACE

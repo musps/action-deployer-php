@@ -2,7 +2,7 @@
 
 USER=tngsy
 PKG=action-deployer-php
-VERSION=r1000
+VERSION="$@"
 
 docker build -t $PKG .
 docker tag $PKG $USER/$PKG:$VERSION
