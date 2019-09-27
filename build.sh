@@ -1,9 +1,9 @@
 #!/bin/sh
 
-USER=tngsy
+HUB=docker.pkg.github.com
 PKG=action-deployer-php
-VERSION="$@"
+VERSION=latest
 
-docker build -t $PKG .
-docker tag $PKG $USER/$PKG:$VERSION
-docker push $USER/$PKG:$VERSION
+docker login $HUB --username $BUILD_USERNAME --password $BUILD_TOKEN
+docker tag $PKG $HUB/$BUILD_USERNAME/$PKG/$PKG:$VERSION
+docker push $HUB/$BUILD_USERNAME/$PKG/$PKG:$VERSION

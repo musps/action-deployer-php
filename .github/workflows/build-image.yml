@@ -1,0 +1,22 @@
+name: Build image
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release tag
+        uses: actions/checkout@v1
+        with:
+          ref: ${{ github.ref }}
+      - name: Make file executable
+        run: chmod +x ./builder.sh
+      - name: Build image
+        run: ./builder.sh
+        env:
+          BUILD_USERNAME: ${{ secrets.BUILD_USERNAME }}
+          BUILD_TOKEN: ${{ secrets.BUILD_TOKEN }}
