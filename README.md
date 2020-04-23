@@ -4,11 +4,7 @@
 ### Usage
 
 ```
-# Realtime builder
 musps/action-deployer-php@master
-
-# Pre-build docker hub
-docker://tngsy/action-deployer-php:r1000
 ```
 
 ### Example
