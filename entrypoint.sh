@@ -27,4 +27,4 @@ chmod 600 /tmp/id_rsa
 ssh-add /tmp/id_rsa
 
 deployer --version
-deployer $CMD_ARGS
+cd ./public && deployer $CMD_ARGS
