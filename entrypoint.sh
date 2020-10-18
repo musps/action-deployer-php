@@ -7,17 +7,13 @@ if [[ -n "$REF" && -n "$SUBSTRING" ]]; then
   echo "REF: $REF"
 fi
 
-if [[ -n "$ACTION_DEBUG" ]]; then
-  echo "DEBUG ENABLED"
-  cd $GITHUB_WORKSPACE
-  SSH_PRIVATE_KEY=$(cat /data_dev/id_rsa)
-fi
-
 if [ -z "$1" ]; then
     CMD_ARGS=""
 else 
     CMD_ARGS="$@"
 fi
+
+mkdir -p /github/home/.ssh
 
 eval $(ssh-agent -s)
 

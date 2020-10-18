@@ -8,7 +8,7 @@ LABEL "com.github.actions.description"="Use your Deployer PHP script with your g
 LABEL "com.github.actions.icon"="server"
 LABEL "com.github.actions.color"="yellow"
 
-ENV DEPLOYER_VERSION=6.4.6
+ENV DEPLOYER_VERSION=6.8.0
 
 RUN apk update --no-cache \
     && apk add --no-cache \
