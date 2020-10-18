@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy stage test
+        id: deploy
+        uses: ./
+        with:
+          args: deploy test -f ./tests/deploy.php
+        env:
+          SERVER1_USER: ${{ secrets.SERVER1_USER }}
+          SERVER1_HOSTNAME: ${{ secrets.SERVER1_HOSTNAME }}
+          SSH_PRIVATE_KEY: ${{ secrets.TEST_SSH_PRIVATE_KEY }}
