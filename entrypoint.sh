@@ -31,7 +31,7 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === 'c31c1e292ad7be5f49291
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
-composer install
+php composer.phar install
 
 deployer --version
 deployer $CMD_ARGS
