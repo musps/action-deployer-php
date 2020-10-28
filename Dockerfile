@@ -1,4 +1,4 @@
-FROM php:7-alpine AS composer
+FROM php:7.4-cli-alpine
 
 LABEL "repository" = "https://github.com/musps/action-deployer-php"
 LABEL "homepage" = "https://github.com/musps/action-deployer-php"
@@ -21,8 +21,6 @@ RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
 RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer \
     && chmod +x /usr/local/bin/deployer
-
-COPY --from=composer /usr/local/bin/composer /usr/local/bin/composer
 
 COPY entrypoint.sh /entrypoint.sh
 
