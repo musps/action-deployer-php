@@ -1,4 +1,4 @@
-FROM php:7.4-cli-alpine
+FROM php:7-alpine
 
 LABEL "repository" = "https://github.com/musps/action-deployer-php"
 LABEL "homepage" = "https://github.com/musps/action-deployer-php"
