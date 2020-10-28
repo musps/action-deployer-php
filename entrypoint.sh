@@ -33,6 +33,7 @@ php -r "unlink('composer-setup.php');"
 
 php composer.phar install
 
+mkdir ~/.ssh/
 chown -R "$(id -u):$(id -g)" ~/.ssh/
 
 deployer --version
