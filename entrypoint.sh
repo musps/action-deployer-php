@@ -33,7 +33,7 @@ php -r "unlink('composer-setup.php');"
 
 php composer.phar install
 
-sudo chown -R "$(id -u):$(id -g)" /github/home/.ssh/
+chown -R "$(id -u):$(id -g)" /github/home/.ssh/
 
 deployer --version
 deployer $CMD_ARGS
