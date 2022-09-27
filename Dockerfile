@@ -22,6 +22,8 @@ RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer \
     && chmod +x /usr/local/bin/deployer
 
+RUN echo 'HostKeyAlgorithms +ssh-rsa' >> /etc/ssh/sshd_config
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
