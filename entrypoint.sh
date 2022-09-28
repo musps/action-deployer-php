@@ -22,5 +22,15 @@ echo "$SSH_PRIVATE_KEY" | tr -d '\r' > /tmp/id_rsa
 chmod 600 /tmp/id_rsa
 ssh-add /tmp/id_rsa
 
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+php composer.phar install
+
+mkdir ~/.ssh/
+chown -R "$(id -u):$(id -g)" ~/.ssh/
+
 deployer --version
 deployer $CMD_ARGS
