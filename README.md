@@ -22,7 +22,7 @@ musps/action-deployer-php@master
 
 * Set your ssh private key in your repository secrets.
 * Set the file and command as argument .
-* Current Deployer PHP version: `6.8.0`
+* Current Deployer PHP version: `7.3.1`
  
 ### Demo workflows
 
